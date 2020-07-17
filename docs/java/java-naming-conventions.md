@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 > 原文链接：https://www.cnblogs.com/liqiangchn/p/12000361.html 
 
 简洁清爽的代码风格应该是大多数工程师所期待的。在工作中笔者常常因为起名字而纠结，夸张点可以说是编程5分钟，命名两小时！究竟为什么命名成为了工作中的拦路虎。
@@ -302,7 +306,7 @@ public class HelloWorld {
 getMessageById(id)
 ```
 
-1. Advance with the time
+3. Advance with the time
    注解应该随着代码的变动而改变，注解表达的信息要与代码中完全一致。通常情况下修改代码后一定要修改注解。
 
 ### 6.2 注解格式
