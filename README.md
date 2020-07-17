@@ -13,36 +13,6 @@
 1. [完结撒花！JavaGuide面试突击版来啦！](./docs/javaguide面试突击版.md)
 2. [JavaGuide重大更新记录](./docs/update-history.md)
 
-<p align="center">
-<a href="https://github.com/Snailclimb/JavaGuide" target="_blank">
-	<img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3/logo - 副本.png" width=""/>
-</a>
-</p>
-
-<p align="center">
-  <a href="https://snailclimb.gitee.io/javaguide"><img src="https://img.shields.io/badge/阅读-read-brightgreen.svg" alt="阅读"></a>
-  <a href="#公众号"><img src="https://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-JavaGuide-lightgrey.svg" alt="公众号"></a>
-  <a href="#公众号"><img src="https://img.shields.io/badge/PDF-Java面试突击-important.svg" alt="公众号"></a>
-  <a href="#投稿"><img src="https://img.shields.io/badge/support-投稿-critical.svg" alt="投稿"></a>
-  <a href="https://xiaozhuanlan.com/javainterview?rel=javaguide"><img src="https://img.shields.io/badge/Java-面试指南-important" alt="投稿"></a>
-</p>
-
-<h3 align="center">Sponsor</h3>
-
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="middle">
-        <a href="https://mp.weixin.qq.com/s/li9_YXNVxan6Qgt3Q9FYqA">
-          <img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-7/WechatIMG1.png" style="margin: 0 auto;width:400px" /></a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://mp.weixin.qq.com/s/uXgGt66Df3JC4GM7d0LlZg" target="_blank">
-          <img src="https://imgkr.cn-bj.ufileos.com/75fef802-16f0-4e0b-9d6f-a9173f24a40f.png" style="margin: 0 auto;width:400px" /></a>
-      </td>        
-    </tr>
-  </tbody>
-</table>
 
 
 ## 目录
