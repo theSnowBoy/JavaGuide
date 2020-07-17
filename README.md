@@ -1,70 +1,14 @@
 如果 Github 访问速度比较慢或者图片无法刷新出来的话，可以转移到[码云](https://gitee.com/SnailClimb/JavaGuide )查看，或者[在线阅读](https://snailclimb.gitee.io/javaguide )。**如果你要提交 issue 或者 pr 的话请到 [Github](https://github.com/Snailclimb/JavaGuide) 提交。**
 
-《JavaGuide面试突击版》PDF版本+3本PDF Java 学习手册，在[公众号JavaGuide](#公众号)后台回复“面试突击”即可获取。
-
-如要进群或者请教问题，请[联系我](#联系我) （备注来自Github。请直入问题，工作时间不回复）。
-
 > JavaGuide 的Star数量虽然比较多，但是它的价值和含金量一定是不能和 Dubbo、Nacos这些优秀的国产开源项目比的。希望国内可以出更多优秀的开源项目！
 >
 > 另外，希望大家对面试不要抱有侥幸的心理，打铁还需自身硬！  我希望这个文档是为你学习  Java 指明方向，而不是用来应付面试用的。加油！奥利给！
 
 **开始阅读之前必看** ：
 
-1. [完结撒花！JavaGuide面试突击版来啦！](./docs/javaguide面试突击版.md)
 2. [JavaGuide重大更新记录](./docs/update-history.md)
 
-
-
-## 目录
-
-- [Java](#java)
-    - [基础](#基础)
-    - [容器](#容器)
-    - [并发](#并发)
-    - [JVM](#jvm)
-    - [其他](#其他)
-- [网络](#网络)
-- [操作系统](#操作系统)
-    - [Linux](#linux)
-- **[数据结构与算法](#数据结构与算法)**
-    - [数据结构](#数据结构)
-    - [算法](#算法)
-- [数据库](#数据库)
-    - [MySQL](#mysql)
-    - [Redis](#redis)
-- [系统设计](#系统设计)
-    - [必知](#必知)
-    - [常用框架](#常用框架)
-        - [Spring](#springspringboot)
-        - [SpringBoot](#springboot)
-        - [MyBatis](#mybatis)
-    - [认证授权(JWT、SSO)](#认证授权)
-    - [分布式](#分布式)
-        - [Elasticsearch(分布式搜索引擎)](#elasticsearch分布式搜索引擎)
-        - [RPC](#rpc)
-        - [消息队列](#消息队列)
-        - [API 网关](#api-网关)
-        - [分布式id](#分布式id)
-        - [分布式限流](#分布式限流)
-        - [分布式接口幂等性](#分布式接口幂等性)
-        - [数据库扩展](#数据库扩展)
-        - [ZooKeeper](#zookeeper)
-    - [大型网站架构](#大型网站架构)
-        - [性能测试](#性能测试)
-        - [高并发](#高并发)
-        - [高可用](#高可用)
-    - [微服务](#微服务)
-        - [Spring Cloud](#spring-cloud)
-- [必会工具](#必会工具)
-    - [Git](#git)
-    - [Docker](#docker)
-- [面试指南](#面试指南)
-- [Java学习常见问题汇总](#java学习常见问题汇总)
-- [资源](#资源)
-    - [Java程序员必备书单](#java程序员必备书单)
-    - [实战项目推荐](#实战项目推荐)
-- [待办](#待办)
-- [说明](#说明)
+[TOC]
 
 ## Java
 
@@ -413,74 +357,5 @@ Logo下的小图标是使用[Shields.IO](https://shields.io/) 生成的。
 1. 笔记内容大多是手敲，所以难免会有笔误，你可以帮我找错别字。
 2. 很多知识点我可能没有涉及到，所以你可以对其他知识点进行补充。
 3. 现有的知识点难免存在不完善或者错误，所以你可以对已有知识点进行修改/补充。
-
-### 联系我
-
-![个人微信](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-7/wechat3.jpeg)
-
-### Contributor
-
-下面是笔主收集的一些对本仓库提过有价值的pr或者issue的朋友，人数较多，如果你也对本仓库提过不错的pr或者issue的话，你可以加我的微信与我联系。下面的排名不分先后！
-
-<a href="https://github.com/LiWenGu">
-    <img src="https://avatars0.githubusercontent.com/u/15909210?s=460&v=4" width="45px">
-</a>
-<a href="https://github.com/fanofxiaofeng">
-    <img src="https://avatars0.githubusercontent.com/u/3983683?s=460&v=4" width="45px">
-</a>
-<a href="https://github.com/fanchenggang">  
-    <img src="https://avatars2.githubusercontent.com/u/8225921?s=460&v=4" width="45px">
-</a>
-<a href="https://github.com/Rustin-Liu">  
-    <img src="https://avatars2.githubusercontent.com/u/29879298?s=400&v=4" width="45px">
-</a>
-
-<a href="https://github.com/ipofss">
-    <img src="https://avatars1.githubusercontent.com/u/5917359?s=460&v=4" width="45px"></a>
-<a href="https://github.com/Gene1994">
-    <img src="https://avatars3.githubusercontent.com/u/24930369?s=460&v=4" width="45px">
-</a>
-<a href="https://github.com/spikesp">
-    <img src="https://avatars0.githubusercontent.com/u/12581996?s=460&v=4" width="45px"></a>
-<a href="https://github.com/illusorycloud">
-    <img src="https://avatars3.githubusercontent.com/u/31980412?s=460&v=4" width="45px">
-</a>
-<a href="https://github.com/kinglaw1204">
-    <img src="https://avatars1.githubusercontent.com/u/20039931?s=460&v=4" width="45px">
-</a>
-<a href="https://github.com/jun1st">
-    <img src="https://avatars2.githubusercontent.com/u/14312378?s=460&v=4" width="45px">
-</a>"
-<a href="https://github.com/fantasygg">  
-    <img src="https://avatars3.githubusercontent.com/u/13445354?s=460&v=4" width="45px">
-</a>
-<a href="https://github.com/debugjoker">  
-    <img src="https://avatars3.githubusercontent.com/u/26218005?s=460&v=4" width="45px">
-</a>
-<a href="https://github.com/zhyank">  
-    <img src="https://avatars0.githubusercontent.com/u/17696240?s=460&v=4" width="45px">
-</a>
-<a href="https://github.com/Goose9527">  
-    <img src="https://avatars2.githubusercontent.com/u/43314997?s=460&v=4" width="45px">
-</a>
-<a href="https://github.com/yuechuanx">  
-    <img src="https://avatars3.githubusercontent.com/u/19339293?s=460&v=4" width="45px">
-</a>
-<a href="https://github.com/cnLGMing">  
-    <img src="https://avatars2.githubusercontent.com/u/15910705?s=460&v=4" width="45px">
-</a>
-<a href="https://github.com/fanchenggang">  
-    <img src="https://avatars0.githubusercontent.com/u/20358122?s=460&v=4" width="45px">
-</a>
-
-### 公众号
-
-如果大家想要实时关注我更新的文章以及分享的干货的话，可以关注我的公众号。
-
-**《Java面试突击》:** 由本文档衍生的专为面试而生的《Java面试突击》V2.0 PDF 版本[公众号](#公众号)后台回复 **"Java面试突击"** 即可免费领取！
-
-**Java工程师必备学习资源:** 一些Java工程师常用学习资源公众号后台回复关键字 **“1”** 即可免费无套路获取。 
-
-![我的公众号](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/167598cd2e17b8ec.png)
 
 
