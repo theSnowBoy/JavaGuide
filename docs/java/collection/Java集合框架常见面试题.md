@@ -1,63 +1,85 @@
-<!-- TOC -->
-
-- [1. 剖析面试最常见问题之 Java 集合框架](#1-剖析面试最常见问题之-java-集合框架)
-  - [1.1. 集合概述](#11-集合概述)
-    - [1.1.1. Java 集合概览](#111-java-集合概览)
-    - [1.1.2. 说说 List,Set,Map 三者的区别？](#112-说说-listsetmap-三者的区别)
-    - [1.1.3. 集合框架底层数据结构总结](#113-集合框架底层数据结构总结)
-      - [1.1.3.1. List](#1131-list)
-      - [1.1.3.2. Set](#1132-set)
-      - [1.1.3.3. Map](#1133-map)
-    - [1.1.4. 如何选用集合?](#114-如何选用集合)
-    - [1.1.5. 为什么要使用集合？](#115-为什么要使用集合)
-    - [1.1.6. Iterator 迭代器](#116-iterator-迭代器)
-      - [1.1.6.1. 迭代器 Iterator 是什么？](#1161-迭代器-iterator-是什么)
-      - [1.1.6.2. 迭代器 Iterator 有啥用？](#1162-迭代器-iterator-有啥用)
-      - [1.1.6.3. 如何使用？](#1163-如何使用)
-    - [1.1.7. 有哪些集合是线程不安全的？怎么解决呢？](#117-有哪些集合是线程不安全的怎么解决呢)
-  - [1.2. Collection 子接口之 List](#12-collection-子接口之-list)
-    - [1.2.1. Arraylist 和 Vector 的区别?](#121-arraylist-和-vector-的区别)
-    - [1.2.2. Arraylist 与 LinkedList 区别?](#122-arraylist-与-linkedlist-区别)
-      - [1.2.2.1. 补充内容:双向链表和双向循环链表](#1221-补充内容双向链表和双向循环链表)
-      - [1.2.2.2. 补充内容:RandomAccess 接口](#1222-补充内容randomaccess-接口)
-    - [1.2.3. 说一说 ArrayList 的扩容机制吧](#123-说一说-arraylist-的扩容机制吧)
-  - [1.3. Collection 子接口之 Set](#13-collection-子接口之-set)
-    - [1.3.1. comparable 和 Comparator 的区别](#131-comparable-和-comparator-的区别)
-      - [1.3.1.1. Comparator 定制排序](#1311-comparator-定制排序)
-      - [1.3.1.2. 重写 compareTo 方法实现按年龄来排序](#1312-重写-compareto-方法实现按年龄来排序)
-    - [1.3.2. 无序性和不可重复性的含义是什么](#132-无序性和不可重复性的含义是什么)
-    - [1.3.3. 比较 HashSet、LinkedHashSet 和 TreeSet 三者的异同](#133-比较-hashsetlinkedhashset-和-treeset-三者的异同)
-  - [1.4. Map 接口](#14-map-接口)
-    - [1.4.1. HashMap 和 Hashtable 的区别](#141-hashmap-和-hashtable-的区别)
-    - [1.4.2. HashMap 和 HashSet 区别](#142-hashmap-和-hashset-区别)
-    - [1.4.3. HashMap 和 TreeMap 区别](#143-hashmap-和-treemap-区别)
-    - [1.4.4. HashSet 如何检查重复](#144-hashset-如何检查重复)
-    - [1.4.5. HashMap 的底层实现](#145-hashmap-的底层实现)
-      - [1.4.5.1. JDK1.8 之前](#1451-jdk18-之前)
-      - [1.4.5.2. JDK1.8 之后](#1452-jdk18-之后)
-    - [1.4.6. HashMap 的长度为什么是 2 的幂次方](#146-hashmap-的长度为什么是-2-的幂次方)
-    - [1.4.7. HashMap 多线程操作导致死循环问题](#147-hashmap-多线程操作导致死循环问题)
-    - [1.4.8. HashMap 有哪几种常见的遍历方式?](#148-hashmap-有哪几种常见的遍历方式)
-    - [1.4.9. ConcurrentHashMap 和 Hashtable 的区别](#149-concurrenthashmap-和-hashtable-的区别)
-    - [1.4.10. ConcurrentHashMap 线程安全的具体实现方式/底层具体实现](#1410-concurrenthashmap-线程安全的具体实现方式底层具体实现)
-      - [1.4.10.1. JDK1.7（上面有示意图）](#14101-jdk17上面有示意图)
-      - [1.4.10.2. JDK1.8 （上面有示意图）](#14102-jdk18-上面有示意图)
-  - [1.5. Collections 工具类](#15-collections-工具类)
-    - [1.5.1. 排序操作](#151-排序操作)
-    - [1.5.2. 查找,替换操作](#152-查找替换操作)
-    - [1.5.3. 同步控制](#153-同步控制)
-  - [1.6. 其他重要问题](#16-其他重要问题)
-    - [1.6.1. 什么是快速失败(fail-fast)？](#161-什么是快速失败fail-fast)
-    - [1.6.2. 什么是安全失败(fail-safe)呢？](#162-什么是安全失败fail-safe呢)
-    - [1.6.3. Arrays.asList()避坑指南](#163-arraysaslist避坑指南)
-      - [1.6.3.1. 简介](#1631-简介)
-      - [1.6.3.2. 《阿里巴巴 Java 开发手册》对其的描述](#1632-阿里巴巴-java-开发手册对其的描述)
-      - [1.6.3.3. 使用时的注意事项总结](#1633-使用时的注意事项总结)
-
-<!-- /TOC -->
+[TOC]
 
 
-# 1. 剖析面试最常见问题之 Java 集合框架
+
+
+
+# <font color='gree'>【汇总】</font>
+
+## 【IDEA】Goal
+
+> <font color='gree'>下面列举了一些关于java集合学习的一些目标。</font>
+
+1. 了解 java 集合整体的框架；
+
+2. 了解集合关键数据结构 ： List , Set , Map. 
+
+   > 不同集合有不同的作用。
+
+3. 对于结合的一些常见操作。
+
+   > 集合的遍历 ： Iterator ;
+   >
+   > 集合的增、删、改操作；
+   >
+   > 集合的排序：Comparator + Collection.sort()；
+
+4. 集合的底层实现。
+
+   > 是否是线程安全的 ？
+   >
+   > 【关键的数据结构】
+   >
+   > 1. Hash相关的原理（ Hash 算法 & 冲突解决 ）；
+   > 2. 红黑树；
+
+5. 面向对象的设计 : 为何类 & 接口 如此设计？ 
+
+
+
+## 具体的集合结构
+
+### List
+
+1. 【 **两类代表** 】 Arraylist（数组） & LinkedList（链表）
+
+| 类型       | 场景                                        | 底层结构         |
+| ---------- | ------------------------------------------- | ---------------- |
+| ArrayList  | 写少查多；按下表查询较多；有序 + 二分查找； | 数组             |
+| LinkedList | 写多查少；顺序遍历；                        | 双向链表（扩容） |
+
+### Set
+
+1. 【 **3类代表** 】HashSet & LinkedHashSet & TreeSet
+
+| 类型           | 场景                        | 底层结构                                                 |
+| -------------- | --------------------------- | -------------------------------------------------------- |
+| HashSet        | O(1) 按 key 查询            | 【**动态变化结构**】数组 + 链表 / 红黑树（解决hash冲突） |
+| LinkdedHashSet | 记录插入顺序的HashSet提升版 | 基本结构同上， 加上了链表的串联                          |
+| TreeSet        | 带有排序的Map               | 红黑树                                                   |
+
+
+
+### Map
+
+1. 【 **4类代表** 】HashMap & LinkdedHashMap & TreeMap & HashTable
+
+| 类型           | 场景                        | 底层结构                                                 |
+| -------------- | --------------------------- | -------------------------------------------------------- |
+| HashMap        | O(1) 按 key 查询            | 【**动态变化结构**】数组 + 链表 / 红黑树（解决hash冲突） |
+| LinkdedHashMap | 记录插入顺序的HashMap提升版 | 基本结构同上， 加上了链表的串联                          |
+| TreeMap        | 带有排序的Map               | 红黑树                                                   |
+| HashTable      | 早期HashMap，线程安全等     | 数组 + 链表                                              |
+
+## 其他有趣的用法
+
+1. 接口的标识作用。
+
+   > 类似于打Tag, 并未发挥实际的功能作用。
+   >
+   > 如，`ArrayList` 实现了 `RandomAccess` 接口 。
+
+# 1. 剖析常见问题之 Java 集合框架
 
 ## 1.1. 集合概述
 
@@ -108,10 +130,10 @@
 
 ### 1.1.5. 为什么要使用集合？
 
-当我们需要保存一组类型相同的数据的时候，我们应该是用一个容器来保存，这个容器就是数组，但是，使用数组存储对象具有一定的弊端，
+当我们需要**保存一组类型相同的数据的时候**，我们应该是用一个容器来保存，这个容器就是数组，但是，使用数组存储对象具有一定的弊端，
 因为我们在实际开发中，存储的数据的类型是多种多样的，于是，就出现了“集合”，集合同样也是用来存储多个数据的。
 
-数组的缺点是一旦声明之后，长度就不可变了；同时，声明数组时的数据类型也决定了该数组存储的数据的类型；而且，数组存储的数据是有序的、可重复的，特点单一。
+**数组的缺点**是一旦声明之后，长度就不可变了；同时，声明数组时的数据类型也决定了该数组存储的数据的类型；而且，数组存储的数据是有序的、可重复的，特点单一。
 但是集合提高了数据存储的灵活性，Java 集合不仅可以用来存储不同类型不同数量的对象，还可以保存具有映射关系的数据
 
 ### 1.1.6. Iterator 迭代器
@@ -128,13 +150,13 @@ public interface Iterator<E> {
 }
 ```
 
-`Iterator` 对象称为迭代器（设计模式的一种），迭代器可以对集合进行遍历，但每一个集合内部的数据结构可能是不尽相同的，所以每一个集合存和取都很可能是不一样的，虽然我们可以人为地在每一个类中定义 `hasNext()` 和 `next()` 方法，但这样做会让整个集合体系过于臃肿。于是就有了迭代器。
+**`Iterator` 对象称为迭代器（设计模式的一种）**，迭代器可以对集合进行遍历，但每一个集合内部的数据结构可能是不尽相同的，所以每一个集合存和取都很可能是不一样的，虽然我们可以人为地在每一个类中定义 `hasNext()` 和 `next()` 方法，但这样做会让整个集合体系过于臃肿。于是就有了迭代器。
 
-迭代器是将这样的方法抽取出接口，然后在每个类的内部，定义自己迭代方式，这样做就规定了整个集合体系的遍历方式都是 `hasNext()`和`next()`方法，使用者不用管怎么实现的，会用即可。迭代器的定义为：提供一种方法访问一个容器对象中各个元素，而又不需要暴露该对象的内部细节。
+迭代器是将这样的方法抽取出接口，然后在每个类的内部，定义自己迭代方式，这样做就规定了整个集合体系的遍历方式都是 `hasNext()`和`next()`方法，使用者不用管怎么实现的，会用即可。迭代器的定义为：<font color='gree'>提供一种方法访问一个容器对象中各个元素，而又不需要暴露该对象的内部细节</font>。
 
 #### 1.1.6.2. 迭代器 Iterator 有啥用？
 
-`Iterator` 主要是用来遍历集合用的，它的特点是更加安全，因为它可以确保，在当前遍历的集合元素被更改的时候，就会抛出 `ConcurrentModificationException` 异常。
+`Iterator` 主要是用来遍历集合用的，它的特点是更加安全，因为它可以确保，**在当前遍历的集合元素被更改的时候**，就会抛出 `ConcurrentModificationException` 异常。
 
 #### 1.1.6.3. 如何使用？
 
@@ -155,7 +177,7 @@ while (iterator.hasNext()) {
 
 ### 1.1.7. 有哪些集合是线程不安全的？怎么解决呢？
 
-我们常用的 `Arraylist` ,`LinkedList`,`Hashmap`,`HashSet`,`TreeSet`,`TreeMap`，`PriorityQueue` 都不是线程安全的。解决办法很简单，可以使用线程安全的集合来代替。
+<font color='gree'>我们常用的 `Arraylist` ,`LinkedList`,`Hashmap`,`HashSet`,`TreeSet`,`TreeMap`，`PriorityQueue` 都不是线程安全的。</font>解决办法很简单，可以**使用线程安全的集合来代替**。
 
 如果你要使用线程安全的集合的话， `java.util.concurrent` 包中提供了很多并发容器供你使用：
 
@@ -192,14 +214,14 @@ while (iterator.hasNext()) {
 
 ![双向循环链表](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/双向循环链表.png)
 
-#### 1.2.2.2. 补充内容:RandomAccess 接口
+#### 1.2.2.2. 补充内容:RandomAccess 接口 (标识作用)
 
 ```java
 public interface RandomAccess {
 }
 ```
 
-查看源码我们发现实际上 `RandomAccess` 接口中什么都没有定义。所以，在我看来 `RandomAccess` 接口不过是一个标识罢了。标识什么？ 标识实现这个接口的类具有随机访问功能。
+查看源码我们发现实际上 `RandomAccess` 接口中什么都没有定义。所以，**在我看来 `RandomAccess` 接口不过是一个标识罢了。标识什么？ 标识实现这个接口的类具有随机访问功能。**
 
 在 `binarySearch（)` 方法中，它要判断传入的 list 是否 `RamdomAccess` 的实例，如果是，调用`indexedBinarySearch()`方法，如果不是，那么调用`iteratorBinarySearch()`方法
 
@@ -226,7 +248,9 @@ public interface RandomAccess {
 - `comparable` 接口实际上是出自`java.lang`包 它有一个 `compareTo(Object obj)`方法用来排序
 - `comparator`接口实际上是出自 java.util 包它有一个`compare(Object obj1, Object obj2)`方法用来排序
 
-一般我们需要对一个集合使用自定义排序时，我们就要重写`compareTo()`方法或`compare()`方法，当我们需要对某一个集合实现两种排序方式，比如一个 song 对象中的歌名和歌手名分别采用一种排序方法的话，我们可以重写`compareTo()`方法和使用自制的`Comparator`方法或者以两个 Comparator 来实现歌名排序和歌星名排序，第二种代表我们只能使用两个参数版的 `Collections.sort()`.
+一般我们需要对一个集合使用自定义排序时，我们就要重写`compareTo()`方法或`compare()`方法；
+
+当我们需要**对某一个集合实现两种排序方式**，比如一个 song 对象中的歌名和歌手名分别采用一种排序方法的话，我们可以重写`compareTo()`方法和使用自制的`Comparator`方法或者以两个 Comparator 来实现歌名排序和歌星名排序，第二种代表我们只能使用两个参数版的 `Collections.sort()`.
 
 #### 1.3.1.1. Comparator 定制排序
 
@@ -352,9 +376,9 @@ Output：
 
 ### 1.3.2. 无序性和不可重复性的含义是什么
 
-1、什么是无序性？无序性不等于随机性 ，无序性是指存储的数据在底层数组中并非按照数组索引的顺序添加 ，而是根据数据的哈希值决定的。
+1、**什么是无序性**？无序性不等于随机性 ，无序性是指存储的数据在底层数组中并非按照数组索引的顺序添加 ，而是<font color='gree'>根据数据的哈希值决定的</font>。
 
-2、什么是不可重复性？不可重复性是指添加的元素按照 equals()判断时 ，返回 false，需要同时重写 equals()方法和 HashCode()方法。
+2、**什么是不可重复性**？不可重复性是指添加的元素按照 equals()判断时 ，返回 false，需要同时重写 equals()方法和 HashCode()方法。
 
 ### 1.3.3. 比较 HashSet、LinkedHashSet 和 TreeSet 三者的异同
 
@@ -368,11 +392,11 @@ TreeSet 底层使用红黑树，能够按照添加元素的顺序进行遍历，
 
 ### 1.4.1. HashMap 和 Hashtable 的区别
 
-1. **线程是否安全：** HashMap 是非线程安全的，HashTable 是线程安全的,因为 HashTable 内部的方法基本都经过`synchronized` 修饰。（如果你要保证线程安全的话就使用 ConcurrentHashMap 吧！）；
+1. **线程是否安全：** HashMap 是非线程安全的，HashTable 是线程安全的,**因为 HashTable 内部的方法基本都经过`synchronized` 修饰**。（如果你要保证线程安全的话就使用 ConcurrentHashMap 吧！）；
 2. **效率：** 因为线程安全的问题，HashMap 要比 HashTable 效率高一点。另外，HashTable 基本被淘汰，不要在代码中使用它；
-3. **对 Null key 和 Null value 的支持：** HashMap 可以存储 null 的 key 和 value，但 null 作为键只能有一个，null 作为值可以有多个；HashTable 不允许有 null 键和 null 值，否则会抛出 NullPointerException。
+3. **对 Null key 和 Null value 的支持：** <u>HashMap 可以存储 null 的 key 和 value</u>，但 null 作为键只能有一个，null 作为值可以有多个；HashTable 不允许有 null 键和 null 值，否则会抛出 NullPointerException。
 4. **初始容量大小和每次扩充容量大小的不同 ：** ① 创建时如果不指定容量初始值，Hashtable 默认的初始大小为 11，之后每次扩充，容量变为原来的 2n+1。HashMap 默认的初始化大小为 16。之后每次扩充，容量变为原来的 2 倍。② 创建时如果给定了容量初始值，那么 Hashtable 会直接使用你给定的大小，而 HashMap 会将其扩充为 2 的幂次方大小（HashMap 中的`tableSizeFor()`方法保证，下面给出了源代码）。也就是说 HashMap 总是使用 2 的幂作为哈希表的大小,后面会介绍到为什么是 2 的幂次方。
-5. **底层数据结构：** JDK1.8 以后的 HashMap 在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树）时，将链表转化为红黑树，以减少搜索时间。Hashtable 没有这样的机制。
+5. **底层数据结构：**<font color='gree'> JDK1.8 以后的 HashMap 在解决哈希冲突时有了较大的变化</font>，当链表长度大于阈值（默认为 8）（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树）时，将链表转化为红黑树，以减少搜索时间。Hashtable 没有这样的机制。
 
 **HashMap 中带有初始容量的构造函数：**
 
@@ -413,7 +437,7 @@ TreeSet 底层使用红黑树，能够按照添加元素的顺序进行遍历，
 
 ### 1.4.2. HashMap 和 HashSet 区别
 
-如果你看过 `HashSet` 源码的话就应该知道：HashSet 底层就是基于 HashMap 实现的。（HashSet 的源码非常非常少，因为除了 `clone()`、`writeObject()`、`readObject()`是 HashSet 自己不得不实现之外，其他方法都是直接调用 HashMap 中的方法。
+如果你看过 `HashSet` 源码的话就应该知道：**HashSet 底层就是基于 HashMap 实现的**。（HashSet 的源码非常非常少，因为除了 `clone()`、`writeObject()`、`readObject()`是 HashSet 自己不得不实现之外，其他方法都是直接调用 HashMap 中的方法。
 
 |              HashMap               |                           HashSet                            |
 | :--------------------------------: | :----------------------------------------------------------: |
@@ -430,7 +454,7 @@ TreeSet 底层使用红黑树，能够按照添加元素的顺序进行遍历，
 
 实现 `NavigableMap` 接口让 `TreeMap` 有了对集合内元素的搜索的能力。
 
-实现`SortMap`接口让 `TreeMap` 有了对集合中的元素根据键排序的能力。默认是按 key 的升序排序，不过我们也可以指定排序的比较器。示例代码如下：
+实现`SortMap`接口让 `TreeMap` 有了对集合中的元素根据键排序的能力。**默认是按 key 的升序排序**，不过我们也可以指定排序的比较器。示例代码如下：
 
 ```java
 /**
@@ -490,9 +514,12 @@ TreeMap<Person, String> treeMap = new TreeMap<>((person1, person2) -> {
 
 **综上，相比于`HashMap`来说 `TreeMap` 主要多了对集合中的元素根据键排序的能力以及对集合内元素的搜索的能力。**
 
-### 1.4.4. HashSet 如何检查重复
+### <font color='gree'>1.4.4. HashSet 如何检查重复</font>
 
-当你把对象加入`HashSet`时，HashSet 会先计算对象的`hashcode`值来判断对象加入的位置，同时也会与其他加入的对象的 hashcode 值作比较，如果没有相符的 hashcode，HashSet 会假设对象没有重复出现。但是如果发现有相同 hashcode 值的对象，这时会调用`equals()`方法来检查 hashcode 相等的对象是否真的相同。如果两者相同，HashSet 就不会让加入操作成功。（摘自我的 Java 启蒙书《Head fist java》第二版）
+当你把对象加入`HashSet`时，HashSet 会先计算对象的`hashcode`值来判断对象加入的位置，同时也会与其他加入的对象的 hashcode 值作比较，
+
+1. 如果没有相符的 hashcode，HashSet 会假设对象没有重复出现。
+2. 但是如果发现**有相同 hashcode 值的对象**，这时会**调用`equals()`方法来检查 hashcode 相等的对象是否真的相同**。如果两者相同，HashSet 就不会让加入操作成功。（摘自我的 Java 启蒙书《Head fist java》第二版）
 
 **hashCode()与 equals()的相关规定：**
 
@@ -502,7 +529,7 @@ TreeMap<Person, String> treeMap = new TreeMap<>((person1, person2) -> {
 4. 综上，equals 方法被覆盖过，则 hashCode 方法也必须被覆盖
 5. hashCode()的默认行为是对堆上的对象产生独特值。如果没有重写 hashCode()，则该 class 的两个对象无论如何都不会相等（即使这两个对象指向相同的数据）。
 
-**==与 equals 的区别**
+**== 与 equals 的区别**
 
 对于基本类型来说，== 比较的是值是否相等；
 
@@ -838,9 +865,3 @@ public E remove(int index) {
     throw new UnsupportedOperationException();
 }
 ```
-
-
-
-**《Java面试突击》:** Java 程序员面试必备的《Java面试突击》V3.0 PDF 版本扫码关注下面的公众号，在后台回复 **"面试突击"** 即可免费领取！
-
-![我的公众号](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/format,png.jpeg)
